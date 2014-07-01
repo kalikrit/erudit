@@ -5,16 +5,18 @@ class Main extends CI_Controller {
 /*
 * главная
 */
-    public function index($new_ctg_id = 0)
+    public function index()
 	{
-        $this->load->model('news_model');
+        $this->load->model('erudit_index_model');
 
-        //категории новостей
-        $data['news_categories'] = $this->news_model->get_news_categories();
-
-        //новости по заданной категории
-        $data['news'] = $this->news_model->get_news_by_category($new_ctg_id);
-
+        //top active
+        $data['top_active'] = $this->erudit_index_model->get_top_active();
+	
+        //last questions added
+        $data['last_added'] = $this->erudit_index_model->get_last_added();
+		
+		//random interest
+        $data['interest'] = $this->erudit_index_model->get_random_interest();
         //передаем данные в представление
         $data['main_content'] = 'main_view.php'; //(string) $this->load->view('main_view');
         $this->load->view('includes/template', $data);
