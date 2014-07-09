@@ -78,7 +78,7 @@ input[type=text], input[type=password], textarea {
 }
 
 select {
-    width: 308px;
+    width: 280px;
 }
 
 input[type=submit] {

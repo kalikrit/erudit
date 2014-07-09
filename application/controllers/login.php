@@ -37,7 +37,6 @@
       public function logout()
       {
         $this->session->sess_destroy();
-        $data['main_content'] = 'main_view.php';
-        $this->load->view('includes/template', $data);
+		redirect('main');
       }
   }

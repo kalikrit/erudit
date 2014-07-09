@@ -19,11 +19,11 @@ class Main extends CI_Controller {
         $data['interest'] = $this->erudit_index_model->get_random_interest();
         //передаем данные в представление
         $data['main_content'] = 'main_view.php'; //(string) $this->load->view('main_view');
-        $this->load->view('includes/template', $data);
+        $this->load->view('/includes/template.php', $data);
 	}
     
 /*
-* закрытая область - изучаем сессии
+* закрытая область
 */
     public function members_area() 
     {
@@ -45,7 +45,7 @@ class Main extends CI_Controller {
     }
     
 /*
-* форма обратной связи - изучаем работу с ajax и form-helper
+* форма обратной связи
 */
     function contact()
     {
@@ -63,6 +63,15 @@ class Main extends CI_Controller {
         }
         $this->load->view('includes/template',  $data);
     }
+	
+/*
+* about
+*/
+	function about()
+	{
+		$data['main_content'] = 'about_view.php';
+		$this->load->view('includes/template',  $data);
+	}
     
     
 }

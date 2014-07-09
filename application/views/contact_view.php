@@ -21,6 +21,8 @@ $(function(){
     $('#validate').hide();
     
     $('#submit_btn').click(function(){
+		
+		alert('submit button has been clicked');
         
         $('#validate').html('').hide(); 
         

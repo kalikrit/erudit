@@ -2,7 +2,7 @@
     <h4>Авторизация</h4>
 	<div id="msg"></div>
 <?php
-    echo form_open('http://yastya_new/index.php/login/validate_credentials');
+    echo form_open('http://erudit/index.php/login/validate_credentials');
     echo form_label('Логин', 'username');
     echo form_input('username');
     echo form_label('Пароль', 'password');
